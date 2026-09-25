@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { Equipment, EquipmentService } from '../../services/equipment.service';
 
 @Component({
@@ -14,6 +15,15 @@ export class EquipmentListComponent implements OnInit {
   constructor(private equipmentService: EquipmentService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loadEquipment();
+
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.loadEquipment();
+      });
+  }
+
+  loadEquipment(): void {
     this.equipmentService.getEquipment().subscribe({
       next: (data) => {
         this.equipment = data;
