@@ -1,0 +1,29 @@
+<button (click)="goBack()">← Back to Equipment</button>
+
+<h2>Equipment Details</h2>
+
+<div *ngIf="equipment">
+  <p><strong>Make:</strong> {{ equipment.make }}</p>
+  <p><strong>Model:</strong> {{ equipment.model }}</p>
+  <p><strong>Serial Number:</strong> {{ equipment.serialNumber }}</p>
+  <p><strong>Location:</strong> {{ equipment.warehouseLocation }}</p>
+  <p><strong>Status:</strong> {{ equipment.status }}</p>
+
+  <h3>Maintenance History</h3>
+
+  <p>Records found: {{ maintenanceRecords.length }}</p>
+
+  <ul>
+    <li *ngFor="let record of maintenanceRecords">
+      {{ record.date | date }} -
+      {{ record.description }} -
+      {{ record.technician }} -
+      ${{ record.cost }}
+    </li>
+  </ul>
+  
+  <app-maintenance-form
+    [equipmentId]="equipmentId"
+    (recordCreated)="loadMaintenanceRecords()">
+  </app-maintenance-form>
+</div>

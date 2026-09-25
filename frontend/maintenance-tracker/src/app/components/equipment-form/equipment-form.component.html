@@ -1,0 +1,58 @@
+<h2>Add Equipment</h2>
+
+<form [formGroup]="equipmentForm" (ngSubmit)="submit()">
+
+  <div>
+    <label for="make">Make</label>
+    <input id="make" type="text" formControlName="make">
+
+    <div *ngIf="equipmentForm.controls.make.touched && equipmentForm.controls.make.invalid">
+      Make is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="model">Model</label>
+    <input id="model" type="text" formControlName="model">
+
+    <div *ngIf="equipmentForm.controls.model.touched && equipmentForm.controls.model.invalid">
+      Model is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="serialNumber">Serial Number</label>
+    <input id="serialNumber" type="text" formControlName="serialNumber">
+
+    <div *ngIf="equipmentForm.controls.serialNumber.touched && equipmentForm.controls.serialNumber.invalid">
+      Serial number is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="warehouseLocation">Warehouse Location</label>
+    <input id="warehouseLocation" type="text" formControlName="warehouseLocation">
+
+    <div *ngIf="equipmentForm.controls.warehouseLocation.touched && equipmentForm.controls.warehouseLocation.invalid">
+      Warehouse location is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="status">Status</label>
+    <select id="status" formControlName="status">
+      <option value="Active">Active</option>
+      <option value="Maintenance">Maintenance</option>
+      <option value="Inactive">Inactive</option>
+    </select>
+  </div>
+
+
+  <button type="submit">Create Equipment</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+
+</form>
+
+<div *ngIf="errorMessage">
+  {{ errorMessage }}
+</div>

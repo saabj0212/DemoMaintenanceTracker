@@ -1,0 +1,27 @@
+<h2>Company Equipment Inventory</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Serial Number</th>
+            <th>Location</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of equipment"
+            (dblclick)="openEquipment(item)"
+            [attr.title]="'Maintenance logs: ' + item.maintenanceCount + '\nDouble-click to view maintenance history'">
+            <td>{{ item.make }}</td>
+            <td>{{ item.model }}</td>
+            <td>{{ item.serialNumber }}</td>
+            <td>{{ item.warehouseLocation }}</td>
+            <td>{{ item.status }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" (click)="newEquipment()">Add New Equipment</button>

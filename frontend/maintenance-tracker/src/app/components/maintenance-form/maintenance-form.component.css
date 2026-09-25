@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  max-width: 680px;
+  margin-top: 12px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+form {
+  border: 1px solid rgba(0,80,0,0.6);
+  padding: 10px;
+  background: rgba(0,8,0,0.6); /* darker panel */
+  overflow: hidden;
+}
+
+label {
+  color: #9aff7a;
+  display: block;
+  margin-bottom: 4px;
+}
+
+input[type="text"], input[type="date"], input[type="number"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  background: #001200; /* darker input bg */
+  border: 1px solid rgba(0,80,0,0.7);
+  color: #00ff41;
+  box-sizing: border-box;
+  /* inherit the terminal font */
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0,255,65,0.12);
+  border-color: #00ff41;
+}
+
+button[type="submit"] {
+  border: 1px solid #00ff41;
+  background: transparent;
+  color: #00ff41;
+  padding: 8px 12px;
+  cursor: pointer;
+}

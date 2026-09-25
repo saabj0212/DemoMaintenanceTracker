@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  max-width: 880px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* ensure nested maintenance form stays inside */
+app-maintenance-form, app-maintenance-form * {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* controls inherit font */
+app-maintenance-form input,
+app-maintenance-form select,
+app-maintenance-form textarea,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* button and text styling */
+button {
+  border: 1px solid #00ff41;
+  background: transparent;
+  color: #00ff41;
+  padding: 6px 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0,255,65,0.06);
+}
+
+p, li {
+  color: #00ff41;
+  margin: 6px 0;
+  background: transparent;
+}
+
+ul {
+  padding-left: 18px;
+  margin-top: 6px;
+  border-top: 1px dashed rgba(0,255,65,0.06);
+  padding-top: 8px;
+}

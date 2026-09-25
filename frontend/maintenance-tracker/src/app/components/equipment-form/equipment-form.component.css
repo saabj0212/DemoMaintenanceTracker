@@ -1,0 +1,61 @@
+:host {
+  display: block;
+  max-width: 680px;
+  box-sizing: border-box;
+}
+
+form {
+  border: 1px solid rgba(0,80,0,0.6);
+  padding: 12px;
+  background: rgba(0,6,0,0.6); /* darker panel */
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  color: #9aff7a;
+}
+
+/* inputs & selects: darker solid background, green text */
+input[type="text"], select, input[type="date"], input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  background: #001200; /* darker input bg */
+  border: 1px solid rgba(0,80,0,0.7);
+  color: #00ff41;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+  /* inherit the terminal font */
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* slightly darker header background for selects */
+select {
+  background-image: linear-gradient(45deg, transparent 50%, rgba(0,255,65,0.12) 50%),
+                    linear-gradient(135deg, rgba(0,255,65,0.12) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 28px;
+  color: #00ff41;
+}
+
+/* focus with green glow, no white outline */
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0,255,65,0.14);
+  border-color: #00ff41;
+}
+
+/* button styles remain terminal-like */
+button[type="submit"], button[type="button"] {
+  margin-right: 8px;
+  border: 1px solid #00ff41;
+  background: transparent;
+  color: #00ff41;
+  padding: 8px 12px;
+  cursor: pointer;
+}

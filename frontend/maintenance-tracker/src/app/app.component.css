@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 18px;
+  box-sizing: border-box;
+  background: #000900; /* darker very dark green/black */
+  color: #00ff41;     /* terminal green */
+  font-family: "VT323", "Lucida Console", "Courier New", monospace;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+  -webkit-font-smoothing: none;
+}
+
+/* ensure the page has no white border and uses the same background */
+:host ::ng-deep html, :host ::ng-deep body {
+  height: 100%;
+  margin: 0;
+  background: #000900;
+  color: #00ff41;
+}
+
+/* make all text inside components inherit the terminal look */
+:host * {
+  color: #00ff41;
+  font-family: "VT323", "Lucida Console", "Courier New", monospace;
+  box-sizing: border-box;
+}
+
+/* subtle page header look */
+h2, h3 {
+  margin: 6px 0 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(0,255,65,0.10);
+  color: #9aff7a;
+}
+
+/* ensure form controls use the same terminal font and sizing */
+:host input,
+:host select,
+:host textarea,
+:host button {
+	font-family: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+}
